@@ -96,6 +96,11 @@ uv sync
 ```bash
 uv run langchain_demo.py
 ```
+脚本会获取你的提示词，调用获取车辆信息的数据需要确切的url地址如：
+```bash
+>请输入你想咨询的问题，例如“佛罗里达今天的天气如何？”
+用你所能用的工具获取https://www.dongchedi.com/ugc/article/1853526256983114 和 https://www.dongchedi.com/ugc/article/1840941554494467上的详情"
+```
 系统执行流程：
 
 1. 初始化 MCP 客户端并连接浏览器实例  
@@ -125,6 +130,7 @@ uv run langchain_demo.py
   ]
 }
 ```
+
 
 
 
