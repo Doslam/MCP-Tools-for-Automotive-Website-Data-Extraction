@@ -91,6 +91,12 @@ Example with arguments: \`(el) => {
 
 
 
+
+
+
+
+
+
 export const extractDcdByUrl = defineTool({
   name: 'extract_dcd_by_url',
   description:
@@ -116,9 +122,14 @@ export const extractDcdByUrl = defineTool({
       response.appendResponseLine("```");
       return;
     }
-
+    const clean = (u:string) => { 
+      const x =  new URL(/^https?:\/\//i.test(u) ? u : `https://${u}`);
+      x.search = ""; 
+      x.hash = ""; 
+      return x.toString(); 
+    };
     const results : any[] = []
-    for (const url of urls){
+    for (const url of urls.map(clean)){
       await context.waitForEventsAfterAction(async () => { 
       await page.goto(url, { timeout: 60000 }); });
 
@@ -579,6 +590,7 @@ export const extract_qczj_by_url = defineTool({
     const urls: string[] = Array.isArray(request.params.urls)
       ? request.params.urls.filter(Boolean)
       : (request.params.url ? [request.params.url] : []);
+  
 
     if (!urls.length) {
       response.appendResponseLine("```json");
@@ -588,7 +600,12 @@ export const extract_qczj_by_url = defineTool({
     }
 
     const results : any[] = []
-    const clean = (u:string) => { const x = new URL(u); x.search = ""; x.hash = ""; return x.toString(); };
+    const clean = (u:string) => { 
+      const x =  new URL(/^https?:\/\//i.test(u) ? u : `https://${u}`);
+      x.search = ""; 
+      x.hash = ""; 
+      return x.toString(); 
+    };
     for (let url of urls.map(clean)){
       await context.waitForEventsAfterAction(async () => { 
       await page.goto(url, { timeout: 60000 }); });

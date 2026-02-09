@@ -1,6 +1,7 @@
 from http import client
 import os
 from unittest import result
+from dotenv import load_dotenv
 
 
 
@@ -21,8 +22,8 @@ except ImportError:
     print("请安装其他相关模块")
 
 async def langchain_main(client: MCPClient = MCPClient()):
-    BASE_URL = "your local model address"
-
+    load_dotenv()
+    BASE_URL = os.getenv("BASE_URL")
 
     SYSTEM_PROMPT = """
     你是一个智能自动化助手，可以调用 MCP 工具来操作浏览器。
@@ -74,9 +75,9 @@ async def langchain_main(client: MCPClient = MCPClient()):
     checkpointer = InMemorySaver()
     
     model=ChatOpenAI(
-            model_name="Qwen3-30B-A3B", #你的模型
+            model_name=os.getenv("model_name"),
             base_url = BASE_URL,
-            api_key = "local-llm", #你的api key
+            api_key = os.getenv("api_key"),
             temperature=0,
             max_tokens=512,
             timeout=60
@@ -98,8 +99,9 @@ async def langchain_main(client: MCPClient = MCPClient()):
 
     question = input("""请输入你想咨询的问题，例如“佛罗里达今天的天气如何？”或“帮我用MCP工具获取...的详情""")
     #insertquestion = "用你所能用的工具获取https://www.dongchedi.com/ugc/article/1853526256983114 和 https://www.dongchedi.com/ugc/article/1840941554494467上的详情"
+
     result = await agent.ainvoke(
-        {"messages": [{"role": "user", "content": insertquestion}]},
+        {"messages": [{"role": "user", "content": question}]},
     config=config,
     context=Context(user_id="1")
     )

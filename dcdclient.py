@@ -105,6 +105,23 @@ class MCPClient:
             print("✓ 获取评论成功:", res.content[0].text,"\n")
         except Exception as e:
             print(e,"\n获取评论失败")
+    async def get_qczjcomment(self,url: str | list[str] = None):
+        """获取汽车之家论坛页面评论"""
+        try:
+            print(type(url))
+            if type(url) == str: 
+                res = await self.session.call_tool(
+                    "extract_qczj_by_url",
+                    {"url": url}
+                    )
+            elif type(url) == list: 
+                res = await self.session.call_tool(
+                    "extract_qczj_by_url",
+                    {"urls": url}
+                    )
+            print("✓ 获取评论成功:", res.content[0].text,"\n")
+        except Exception as e:
+            print(e,"\n获取评论失败")
     async def cleanup(self):
         """清理资源"""
         await self.exit_stack.aclose()
@@ -120,19 +137,12 @@ async def main():
     try:
         await client.connect_to_server(server_path)
         
-        #await client.tools_description()
-        #await client.navigate_page("https://www.dongchedi.com/ugc/article/1855745332674570")
-        #await client.snapshot_page()
-        #await client.get_href()
-        #await client.get_comment()
-        #await client.get_dcdcomment('https://www.dongchedi.com/ugc/article/1856095078436868')
+        # urls =  ['https://club.autohome.com.cn/bbs/thread/ef1e062e67662c15/114155755-1.html?bbsid=121#pvareaid=6830286',
+        #          'https://club.autohome.com.cn/bbs/thread/b3aa5e8a72df8e82/114198440-1.html?bbsid=8045#pvareaid=6830286']
         
-        urls =  ['https://club.autohome.com.cn/bbs/thread/ef1e062e67662c15/114155755-1.html?bbsid=121#pvareaid=6830286',
-                 'https://club.autohome.com.cn/bbs/thread/b3aa5e8a72df8e82/114198440-1.html?bbsid=8045#pvareaid=6830286']
-        
-        url = "https://club.autohome.com.cn/bbs/thread/ef1e062e67662c15/114155755-1.html?bbsid=121#pvareaid=6830286"
+        # url = "https://club.autohome.com.cn/bbs/thread/ef1e062e67662c15/114155755-1.html?bbsid=121#pvareaid=6830286"
         url = input("测试用url:")
-        res = await client.session.call_tool("extract_qczj_by_url", {"url": url})
+        res = await client.session.call_tool("extract_dcd_by_url", {"url": url})
         print(res.content[0].text)
         #await client.has_next_page()
         #await client.get_all_comment("https://www.dongchedi.com/community/145","./comments.json")
