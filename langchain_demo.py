@@ -21,7 +21,7 @@ except ImportError:
     print("请安装其他相关模块")
 
 async def langchain_main(client: MCPClient = MCPClient()):
-    BASE_URL = "http://192.168.121.32:6011/v1"
+    BASE_URL = "your local model address"
 
 
     SYSTEM_PROMPT = """
