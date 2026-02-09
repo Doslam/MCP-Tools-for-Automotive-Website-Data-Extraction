@@ -1,0 +1,436 @@
+{
+    'messages': [
+        HumanMessage(
+            content='用你所能用的工具获取https://www.dongchedi.com/ugc/article/1853526256983114 和 https://www.dongchedi.com/ugc/article/1840941554494467上的详情',
+            additional_kwargs={
+                },
+            response_metadata={
+                },
+            id='c75e4d9c-10b3-478b-a4bf-fdb6950a2f8e'),
+        AIMessage(
+            content='',
+            additional_kwargs={
+                'refusal': None},
+            response_metadata={
+                'token_usage': {
+                    'completion_tokens': 96,
+                    'prompt_tokens': 5679,
+                    'total_tokens': 5775,
+                    'completion_tokens_details': None,
+                    'prompt_tokens_details': None},
+                'model_provider': 'openai',
+                'model_name': 'Qwen3-30B-A3B',
+                'system_fingerprint': None,
+                'id': 'chatcmpl-94bf9e387cfdd0b3',
+                'finish_reason': 'tool_calls',
+                'logprobs': None},
+            id='lc_run--019c27a1-1df3-7753-a632-4549eb24bf5c-0',
+            tool_calls=[
+                {
+                    'name': 'new_page',
+                    'args': {
+                        'url': 'https://www.dongchedi.com/ugc/article/1853526256983114'},
+                    'id': 'chatcmpl-tool-8d23d3b5af647e1e',
+                    'type': 'tool_call'},
+                {
+                    'name': 'new_page',
+                    'args': {
+                        'url': 'https://www.dongchedi.com/ugc/article/1840941554494467'},
+                    'id': 'chatcmpl-tool-9e887ec8defa55d9',
+                    'type': 'tool_call'}],
+            invalid_tool_calls=[
+                ],
+            usage_metadata={
+                'input_tokens': 5679,
+                'output_tokens': 96,
+                'total_tokens': 5775,
+                'input_token_details': {
+                    },
+                'output_token_details': {
+                    }}),
+        ToolMessage(
+            content=[
+                {
+                    'type': 'text',
+                    'text': '# new_page response\n## Pages\n1: about:blank\n2: https://www.dongchedi.com/ugc/article/1853526256983114 [
+                        selected]',
+                    'id': 'lc_4ce06dc1-e014-4133-a572-846562a56b53'}],
+            name='new_page',
+            id='cf0d5bfb-3ddc-45de-81d6-ee6aa13a5a08',
+            tool_call_id='chatcmpl-tool-8d23d3b5af647e1e'),
+        ToolMessage(
+            content=[
+                {
+                    'type': 'text',
+                    'text': '# new_page response\n## Pages\n1: about:blank\n2: https://www.dongchedi.com/ugc/article/1853526256983114\n3: https://www.dongchedi.com/ugc/article/1840941554494467 [
+                        selected]',
+                    'id': 'lc_04ccef42-ef2e-4dfd-bdcc-a54fdf23a7ea'}],
+            name='new_page',
+            id='5cb30968-30fb-4850-aac9-0d2eab78bf3d',
+            tool_call_id='chatcmpl-tool-9e887ec8defa55d9'),
+        AIMessage(
+            content='',
+            additional_kwargs={
+                'refusal': None},
+            response_metadata={
+                'token_usage': {
+                    'completion_tokens': 144,
+                    'prompt_tokens': 5919,
+                    'total_tokens': 6063,
+                    'completion_tokens_details': None,
+                    'prompt_tokens_details': None},
+                'model_provider': 'openai',
+                'model_name': 'Qwen3-30B-A3B',
+                'system_fingerprint': None,
+                'id': 'chatcmpl-805448f4ec65854b',
+                'finish_reason': 'tool_calls',
+                'logprobs': None},
+            id='lc_run--019c27a1-3840-7c43-950c-c606f9e78717-0',
+            tool_calls=[
+                {
+                    'name': 'select_page',
+                    'args': {
+                        'pageId': 2},
+                    'id': 'chatcmpl-tool-8aa57c91eb55b2fd',
+                    'type': 'tool_call'},
+                {
+                    'name': 'extract_dcd_by_url',
+                    'args': {
+                        'url': 'https://www.dongchedi.com/ugc/article/1853526256983114'},
+                    'id': 'chatcmpl-tool-832618b0f7bf94f0',
+                    'type': 'tool_call'},
+                {
+                    'name': 'select_page',
+                    'args': {
+                        'pageId': 3},
+                    'id': 'chatcmpl-tool-aa5c706fd1d1abc4',
+                    'type': 'tool_call'},
+                {
+                    'name': 'extract_dcd_by_url',
+                    'args': {
+                        'url': 'https://www.dongchedi.com/ugc/article/1840941554494467'},
+                    'id': 'chatcmpl-tool-8d44f485012f4cdd',
+                    'type': 'tool_call'}],
+            invalid_tool_calls=[
+                ],
+            usage_metadata={
+                'input_tokens': 5919,
+                'output_tokens': 144,
+                'total_tokens': 6063,
+                'input_token_details': {
+                    },
+                'output_token_details': {
+                    }}),
+        ToolMessage(
+            content=[
+                {
+                    'type': 'text',
+                    'text': '# select_page response\n## Pages\n1: about:blank\n2: https://www.dongchedi.com/ugc/article/1853526256983114 [
+                        selected]\n3: https://www.dongchedi.com/ugc/article/1840941554494467',
+                    'id': 'lc_0017c518-efff-4f12-bc14-b9ae1166401d'}],
+            name='select_page',
+            id='e54fda19-4441-4c56-b557-468638f6d867',
+            tool_call_id='chatcmpl-tool-8aa57c91eb55b2fd'),
+        ToolMessage(
+            content=[
+                {
+                    'type': 'text',
+                    'text': '# extract_dcd_by_url response\n```json\n[
+                        \n  {
+                            \n    "url": "https://www.dongchedi.com/ugc/article/1853526256983114-3",\n    "extractedAt": "2026-02-04T07:50:16.045Z",\n    "post": {
+                                \n      "author": "专职驾驶员簿董",\n      "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n      "timeRaw": "01-06发布于：宝马3系车友圈",\n      "date": "01-06",\n      "publishedTo": "宝马3系车友圈",\n      "content": "全新宝马三系内饰与之前宝马新世代驾趣概念车内饰相似，未来宝马家族所有车型大概率会保持一致。新款内饰方向盘个人感觉比较科幻，同时又有重机械感。仪表直接在前挡下面贯穿显示，官方称为视平线全景显示（宝马自研的超近距投影平视显示技术）。新款内饰中控屏采用不规则造型，官方之前给出的说法是为了让主驾便于操作屏幕。整体来说还是值得期待。",\n      "images": [
+                                    \n        "https://p3-sign.toutiaoimg.com/motor-article-img/3e770babf06f42e7be93f84d055e70b5~tplv-shrink:1080:720.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=eLKeDlOHd1UWofRvCUR4QX0cYTI%3D",\n        "https://p3-sign.toutiaoimg.com/motor-article-img/4282d3d8ef05473b9fbb9d8172f0057d~tplv-shrink:1080:720.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=QN2cJzARIpS4k5TEPtudyHpAgoA%3D"\n      ]\n    },\n    "allcomments": [
+                                \n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7596964216482431794",\n        "isOP": false,\n        "author": "声美安姐",\n        "authorUrl": "https://www.dongchedi.com/user/2883357994137594",\n        "timeRaw": "评论发表于01-19",\n        "content": "“C级车究竟是个什么样子，宝马搞了很多年，也搞出一些成果，可能前些时候的思路比较好，搞了个G38，但是之后僵化了” TMD这句话的含金量还在上升",\n        "images": [
+                                        \n          "https://p3-dcd-sign.byteimg.com/motor-article-img/b581c15df98c4c1ebc233a0735ec2448~tplv-f042mdwyw7-original:640:0.png?rk3s=2e9b8275&x-expires=1770796208&x-signature=BipbyFJoW74BpiT6wX%2BWSTe57%2BI%3D&psm=motor.pc_ugc.api"\n        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592175621153948479",\n        "isOP": false,\n        "author": "淘气的芒果VLV",\n        "authorUrl": "https://www.dongchedi.com/user/1572722835986180",\n        "timeRaw": "评论发表于01-06",\n        "content": "以后油车3系也要这个内饰么还是电的？",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592201006562231103",\n            "author": "笑撒辰星 · 奔驰C级AMG车主·车龄3年",\n            "authorUrl": "https://www.dongchedi.com/user/3935882555425272",\n            "timeRaw": "回复发表于01-06",\n            "content": "宝马纯电系列，貌似不搞油电同平台了，尤其是欧洲国家逐步取消禁售油车的法案，这帮欧洲车企也在跟进调整原有的战略",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7592211634048287534",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-06",\n            "content": "油车",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592245887431426879",\n        "isOP": false,\n        "author": "用户6342259902636",\n        "authorUrl": "https://www.dongchedi.com/user/352310210345767",\n        "timeRaw": "评论发表于01-06",\n        "content": "这个内饰是哪个奇葩设计的 东倒西歪",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592252449705640745",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-06",\n            "content": "确实 一点都不对称",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7592396927472567059",\n            "author": "菊花水军扛把子",\n            "authorUrl": "https://www.dongchedi.com/user/1482593499879960",\n            "timeRaw": "回复发表于01-07",\n            "content": "奥迪和奔驰卧底设计得",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7592609516010111754",\n            "author": "第八代凯美肉车主",\n            "authorUrl": "https://www.dongchedi.com/user/102265552006",\n            "timeRaw": "回复发表于01-07",\n            "content": "i系列的内饰",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7593744229923767076",\n            "author": "那些情话y",\n            "authorUrl": "https://www.dongchedi.com/user/104425005175",\n            "timeRaw": "回复发表于01-10",\n            "content": "第一感觉方向盘是不是装倒了",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7597494034260853510",\n            "author": "CCH740 · 日产N7车主·车龄半年",\n            "authorUrl": "https://www.dongchedi.com/user/4270947094766824",\n            "timeRaw": "回复发表于01-21",\n            "content": "这个异形屏是定制的 成本很高 而且有角度偏驾驶员侧 双手握方向盘的情况下不会遮挡信息",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592951326586880818",\n        "isOP": false,\n        "author": "你咋这么幽默",\n        "authorUrl": "https://www.dongchedi.com/user/460066006249796",\n        "timeRaw": "评论发表于01-08",\n        "content": "中登老登接受不了很正常，这内饰太激进了",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592951618442691374",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-08",\n            "content": "小登会不会喜欢",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7592951967283118858",\n            "author": "你咋这么幽默",\n            "authorUrl": "https://www.dongchedi.com/user/460066006249796",\n            "timeRaw": "回复发表于01-08",\n            "content": "小登买不起",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7592968708885316406",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-08",\n            "content": "找老登拿钱",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7593009595783021318",\n            "author": "你咋这么幽默",\n            "authorUrl": "https://www.dongchedi.com/user/460066006249796",\n            "timeRaw": "回复发表于01-08",\n            "content": "老登不给，只给买15w以内的",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7593026359367287590",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-09",\n            "content": "不错哦",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592257249913930534",\n        "isOP": false,\n        "author": "神秘风铃HN",\n        "authorUrl": "https://www.dongchedi.com/user/4420463953974008",\n        "timeRaw": "评论发表于01-06",\n        "content": "新款有点帅啊，我才刚买",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592258257499374377",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-06",\n            "content": "现款车型也是不错滴 恭喜您成为尊贵的宝马车主",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7592275407417377587",\n            "author": "聪明小羊ukj",\n            "authorUrl": "https://www.dongchedi.com/user/3384720147092212",\n            "timeRaw": "回复发表于01-06",\n            "content": "新款外观丑，现款经典帅气",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7592275776964313866",\n            "author": "分秒必争饭团Laz · 宝马5系车主·新提车",\n            "authorUrl": "https://www.dongchedi.com/user/2133468973377592",\n            "timeRaw": "回复发表于01-06",\n            "content": "325现在多少钱",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7592281054066213638",\n            "author": "菜菜oio · 宝马3系车主·新提车",\n            "authorUrl": "https://www.dongchedi.com/user/364691878316670",\n            "timeRaw": "回复发表于01-07",\n            "content": "新款内饰不好看啊，那方向盘。。。",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7592945314387215145",\n            "author": "2026发财 · 宝马5系车主·车龄9年",\n            "authorUrl": "https://www.dongchedi.com/user/756896228191448",\n            "timeRaw": "回复发表于01-08",\n            "content": "6",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592280903204995894",\n        "isOP": false,\n        "author": "菜菜oio",\n        "authorUrl": "https://www.dongchedi.com/user/364691878316670",\n        "timeRaw": "评论发表于01-07",\n        "content": "这什么内饰，稍微近视点的都看不清。",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592283707420541747",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-07",\n            "content": "难怪有些人上车就把眼镜戴上",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7592424797180101395",\n            "author": "菜鸡爱开车",\n            "authorUrl": "https://www.dongchedi.com/user/2208281636897383",\n            "timeRaw": "回复发表于01-07",\n            "content": "我第一反应也是这个 很不友好",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7595860415805195062",\n            "author": "菜菜oio · 宝马3系车主·新提车",\n            "authorUrl": "https://www.dongchedi.com/user/364691878316670",\n            "timeRaw": "回复发表于01-16",\n            "content": "上车先找眼镜",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592510153854337827",\n        "isOP": false,\n        "author": "塞车之王Guoda",\n        "authorUrl": "https://www.dongchedi.com/user/61395034577",\n        "timeRaw": "评论发表于01-07",\n        "content": "内饰还好我能接受，方向盘你们不觉得是反的吗？",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592514791537869631",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-07",\n            "content": "看着有点不适应",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7593079628559287082",\n            "author": "Zy1204",\n            "authorUrl": "https://www.dongchedi.com/user/1838007027249335",\n            "timeRaw": "回复发表于01-09",\n            "content": "我第一眼就觉得，像是倒过来的。",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592274882617574180",\n        "isOP": false,\n        "author": "自由自在161567730",\n        "authorUrl": "https://www.dongchedi.com/user/59387718113",\n        "timeRaw": "评论发表于01-06",\n        "content": "盖住那个宝马标，这内饰能被喷烂",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592277727370068746",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-06",\n            "content": "没那标 早就被淹了",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7595891838834443049",\n            "author": "用户9214454212776",\n            "authorUrl": "https://www.dongchedi.com/user/3183815880355742",\n            "timeRaw": "回复发表于01-16",\n            "content": "有那标也丑，现款的内饰外观真的很帅，为啥要改成这四不像，不理解",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7597270487135486761",\n            "author": "康杨luca",\n            "authorUrl": "https://www.dongchedi.com/user/1128575847642444",\n            "timeRaw": "回复发表于01-20",\n            "content": "烂在哪？你就适合地摊的烂车",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7593061567865422619",\n        "isOP": false,\n        "author": "Charles83381",\n        "authorUrl": "https://www.dongchedi.com/user/2283046502664664",\n        "timeRaw": "评论发表于01-09",\n        "content": "这投影和yu7一样 中国车更先进",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7596361345067467571",\n            "author": "多才多艺清泉SJ",\n            "authorUrl": "https://www.dongchedi.com/user/1038406790677694",\n            "timeRaw": "回复发表于01-18",\n            "content": "还真不一样，小米那个如果戴偏光镜就看不清了，宝马这个可以看清，宝马这个屏幕设计图也更早，只是推出的慢了一点",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7596372127562580787",\n            "author": "湛蓝之 · 标致408车主·车龄4年",\n            "authorUrl": "https://www.dongchedi.com/user/109497781908",\n            "timeRaw": "回复发表于01-18",\n            "content": "都是抄袭阿维塔的",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7593305716988494635",\n        "isOP": false,\n        "author": "foliage03",\n        "authorUrl": "https://www.dongchedi.com/user/1763253023150103",\n        "timeRaw": "评论发表于01-09",\n        "content": "这个不对称的中控屏看得我好难受",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7593308278064104202",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-09",\n            "content": "坐主驾位应该会好点",\n            "images": [
+                                                ]\n          },\n          {
+                                            \n            "commentId": "7596360788957397801",\n            "author": "多才多艺清泉SJ",\n            "authorUrl": "https://www.dongchedi.com/user/1038406790677694",\n            "timeRaw": "回复发表于01-17",\n            "content": "方便驾驶位操作的设计",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7602581171834684223",\n        "isOP": false,\n        "author": "ifLiebe",\n        "authorUrl": "https://www.dongchedi.com/user/4100544717665931",\n        "timeRaw": "评论发表于21小时前",\n        "content": "从个人审美上不如现款的内饰好看",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7602640307536593714",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于17小时前",\n            "content": "两年后可能就习惯了",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592660416380797715",\n        "isOP": false,\n        "author": "zbf",\n        "authorUrl": "https://www.dongchedi.com/user/1390247035797872",\n        "timeRaw": "评论发表于01-08",\n        "content": "设计师彻底把宝马搞废了",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592673237130281782",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-08",\n            "content": "听说是新团队设计的",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7593165052682306342",\n        "isOP": false,\n        "author": "用户353050277481",\n        "authorUrl": "https://www.dongchedi.com/user/3994950720293163",\n        "timeRaw": "评论发表于01-09",\n        "content": "油的还是电的",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7593167046247334694",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-09",\n            "content": "油的，电的差不多也是这个造型",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592361425457300267",\n        "isOP": false,\n        "author": "直率漂流瓶8Z4",\n        "authorUrl": "https://www.dongchedi.com/user/607406491174295",\n        "timeRaw": "评论发表于01-07",\n        "content": "法国雪铁龙的内饰配上黑山老妖的外观 有前途",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592412135906100014",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-07",\n            "content": "你这个总结很到位",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7597366744491164435",\n        "isOP": false,\n        "author": "梦想开gt3",\n        "authorUrl": "https://www.dongchedi.com/user/2951563212227227",\n        "timeRaw": "评论发表于01-20",\n        "content": "方向盘怪怪的，屏幕就正常做正方形够了",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7597381500266578739",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-20",\n            "content": "可能是设计比较前卫",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7597372766371201838",\n        "isOP": false,\n        "author": "123___62719512",\n        "authorUrl": "https://www.dongchedi.com/user/5747095239",\n        "timeRaw": "评论发表于01-20",\n        "content": "欣赏不来",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7597381388446630682",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-20",\n            "content": "可能以后都是这个样式",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7596876247356097334",\n        "isOP": false,\n        "author": "欢快扑克7xr",\n        "authorUrl": "https://www.dongchedi.com/user/1268175527482411",\n        "timeRaw": "评论发表于01-19",\n        "content": "真踏马的丑爆了，特别是那一条屏幕简直早期国产中的低端新能源屏幕，简直没眼看",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7596237309306159898",\n        "isOP": false,\n        "author": "俞霁峰",\n        "authorUrl": "https://www.dongchedi.com/user/4184934285",\n        "timeRaw": "评论发表于01-17",\n        "content": "仪表盘没了，不能接受。",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7596240168701543174",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-17",\n            "content": "在前挡下面",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7594660183989699378",\n        "isOP": false,\n        "author": "沐云風",\n        "authorUrl": "https://www.dongchedi.com/user/6888646895",\n        "timeRaw": "评论发表于01-13",\n        "content": "如果坐后排看，这个屏幕歪的有点难受，况且我有强迫症",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7594672233432564534",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-13",\n            "content": "那你就只能坐主驾位了",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7594666513550852906",\n        "isOP": false,\n        "author": "小白F35",\n        "authorUrl": "https://www.dongchedi.com/user/94550844815",\n        "timeRaw": "评论发表于01-13",\n        "content": "再见了宝马",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7594672322301346569",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-13",\n            "content": "还会再回来的",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7593448341304967999",\n        "isOP": false,\n        "author": "钟爱小小R",\n        "authorUrl": "https://www.dongchedi.com/user/2164288263822429",\n        "timeRaw": "评论发表于01-10",\n        "content": "平行四边形都来了",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7593619587195978538",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-10",\n            "content": "腻害吧",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592909257914204934",\n        "isOP": false,\n        "author": "幽默百香果3T8",\n        "authorUrl": "https://www.dongchedi.com/user/3834724512705472",\n        "timeRaw": "评论发表于01-08",\n        "content": "用在宝马上都是对的，赞美之词溢于言表，用在国产品牌身上就是各种阴阳非议",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592951227735065390",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-08",\n            "content": "国产车也有好的设计",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592917835320460051",\n        "isOP": false,\n        "author": "拾柒Plus",\n        "authorUrl": "https://www.dongchedi.com/user/1512534211567837",\n        "timeRaw": "评论发表于01-08",\n        "content": "莫名其妙一排屏幕，掉价",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592950808820761385",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-08",\n            "content": "概念车也是这个造型",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592787690949640966",\n        "isOP": false,\n        "author": "月蚀的假面丶",\n        "authorUrl": "https://www.dongchedi.com/user/1126374212901693",\n        "timeRaw": "评论发表于01-08",\n        "content": "就目前曝光的3系外观和内饰，基本要废",\n        "images": [
+                                        ],\n        "replies": [
+                                        \n          {
+                                            \n            "commentId": "7592788535111959334",\n            "author": "专职驾驶员簿董 · 宝马3系车主·车龄6年",\n            "authorUrl": "https://www.dongchedi.com/user/1583776825618536",\n            "timeRaw": "回复发表于01-08",\n            "content": "跨度太大了",\n            "images": [
+                                                ]\n          }\n        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7593019135723242303",\n        "isOP": false,\n        "author": "懂一点儿车",\n        "authorUrl": "https://www.dongchedi.com/user/776688334017182",\n        "timeRaw": "评论发表于01-08",\n        "content": "深得我心",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7593129114719650611",\n        "isOP": false,\n        "author": "你是谁4013",\n        "authorUrl": "https://www.dongchedi.com/user/3834751617087032",\n        "timeRaw": "评论发表于01-09",\n        "content": "他妈的，这个设计师绝对是卧底来的",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592917876374242089",\n        "isOP": false,\n        "author": "伟总",\n        "authorUrl": "https://www.dongchedi.com/user/3364944926478712",\n        "timeRaw": "评论发表于01-08",\n        "content": "有没有车友群",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7599510515546587967",\n        "isOP": false,\n        "author": "shhsisha",\n        "authorUrl": "https://www.dongchedi.com/user/93339148551",\n        "timeRaw": "评论发表于9天前",\n        "content": "作死的路上越走越远",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7592983379797459775",\n        "isOP": false,\n        "author": "狗子2930",\n        "authorUrl": "https://www.dongchedi.com/user/111073813554",\n        "timeRaw": "评论发表于01-08",\n        "content": "没见过这么丑的",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7598615546321552169",\n        "isOP": false,\n        "author": "梦幻松鼠Z7A",\n        "authorUrl": "https://www.dongchedi.com/user/2497730472843550",\n        "timeRaw": "评论发表于01-24",\n        "content": "真丑",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7593694878824563483",\n        "isOP": false,\n        "author": "可靠花猫4DR",\n        "authorUrl": "https://www.dongchedi.com/user/1581520949619657",\n        "timeRaw": "评论发表于01-10",\n        "content": "离谱，国产10万级的车都不如",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7598397995155161862",\n        "isOP": false,\n        "author": "非凡菠萝e0g",\n        "authorUrl": "https://www.dongchedi.com/user/4487543594695371",\n        "timeRaw": "评论发表于01-23",\n        "content": "换这个内饰销量肯定差到极致",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7593779840650724150",\n        "isOP": false,\n        "author": "鹿谷o",\n        "authorUrl": "https://www.dongchedi.com/user/59264727072",\n        "timeRaw": "评论发表于01-11",\n        "content": "完犊子",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7598007191370810154",\n        "isOP": false,\n        "author": "诗意雪碧sV6",\n        "authorUrl": "https://www.dongchedi.com/user/3353985363748300",\n        "timeRaw": "评论发表于01-22",\n        "content": "这是真的丑，抄作业都抄不明白，整的歪歪扭扭的以为很潮？",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7594005546144563994",\n        "isOP": false,\n        "author": "进取奶酪HHc",\n        "authorUrl": "https://www.dongchedi.com/user/3731114282979120",\n        "timeRaw": "评论发表于01-11",\n        "content": "为什么宝马的外观和内饰设计总有一个是内鬼呢",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7597112485976113966",\n        "isOP": false,\n        "author": "爱开马自达的梁家辉",\n        "authorUrl": "https://www.dongchedi.com/user/457014774084349",\n        "timeRaw": "评论发表于01-20",\n        "content": "阿维塔",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7596372424153629459",\n        "isOP": false,\n        "author": "湛蓝之",\n        "authorUrl": "https://www.dongchedi.com/user/109497781908",\n        "timeRaw": "评论发表于01-18",\n        "content": "抄袭阿维塔，也抄不伦不类的",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7597456382942135082",\n        "isOP": false,\n        "author": "A家鸿",\n        "authorUrl": "https://www.dongchedi.com/user/1072757779214125",\n        "timeRaw": "评论发表于01-20",\n        "content": "设计师应该是药丸吃多了",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7595538554202506035",\n        "isOP": false,\n        "author": "G1deonJS",\n        "authorUrl": "https://www.dongchedi.com/user/1821254374666439",\n        "timeRaw": "评论发表于01-15",\n        "content": "这个内饰是新款ix3的 新三系应该会做些改动",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7594638197494809407",\n        "isOP": false,\n        "author": "一往无前海燕kFq",\n        "authorUrl": "https://www.dongchedi.com/user/464421619244492",\n        "timeRaw": "评论发表于01-13",\n        "content": "越设计越丑，宝马是废了",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7594795333944197894",\n        "isOP": false,\n        "author": "完美的背刺",\n        "authorUrl": "https://www.dongchedi.com/user/3922676992447176",\n        "timeRaw": "评论发表于01-13",\n        "content": "感觉就是强行为了设计而设计",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1853526256983114",\n        "commentId": "7595203060420051731",\n        "isOP": false,\n        "author": "用户1345094383131",\n        "authorUrl": "https://www.dongchedi.com/user/2560079673168126",\n        "timeRaw": "评论发表于01-14",\n        "content": "宝马是准备自杀吗",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      }\n    ]\n  }\n]\n```',
+                    'id': 'lc_69f9a0f8-c2e4-4143-9aa6-ef20de914da0'}],
+            name='extract_dcd_by_url',
+            id='196f0e3c-7808-4560-bfb4-ea1ef6fa3ac2',
+            tool_call_id='chatcmpl-tool-832618b0f7bf94f0'),
+        ToolMessage(
+            content=[
+                {
+                    'type': 'text',
+                    'text': '# select_page response\n## Pages\n1: about:blank\n2: https://www.dongchedi.com/ugc/article/1853526256983114\n3: https://www.dongchedi.com/ugc/article/1840941554494467 [
+                        selected]\n4: https://www.dongchedi.com/ugc/article/1853526256983114-3',
+                    'id': 'lc_50c3fe79-af73-49e3-855b-7b45cddbece8'}],
+            name='select_page',
+            id='e28fbeb0-9d79-44f0-91f2-f953e36d1534',
+            tool_call_id='chatcmpl-tool-aa5c706fd1d1abc4'),
+        ToolMessage(
+            content=[
+                {
+                    'type': 'text',
+                    'text': '# extract_dcd_by_url response\n```json\n[
+                        \n  {
+                            \n    "url": "https://www.dongchedi.com/ugc/article/1840941554494467",\n    "extractedAt": "2026-02-04T07:50:18.526Z",\n    "post": {
+                                \n      "author": "奋发白云0u5",\n      "authorUrl": "https://www.dongchedi.com/user/1865191288217015",\n      "timeRaw": "2025-08-20发布于：宝马3系车友圈",\n      "date": "",\n      "publishedTo": "宝马3系车友圈",\n      "content": "本人原来车2017年1.2t丰田雷凌，截止卖车前行驶9.8万公里。因为动力差，3-4年前就有换车打算了。最开始想换思域，合计原来的车卖了买个同样车况，加2-3个W轻松搞定，动力强。不久我就给人追尾了，其实不严重大灯和发动盖都不用换的，为了换对led大灯，再加不懂扩损，结果前面都换了，水箱框架修复左侧翼子板修复，导致我如果想换相同车况就得加4-5万了。这么一想那就上豪华品牌了，那会凯迪拉克atsl才卖10万左右，动力强，我关注的第二点静音还好。这么就又攒了1-2年钱，开始找专卖凯迪拉克老姚等网红，到租车行租车体验感觉动力是强，可是涡轮需要2900转才能进入。因为结婚有孩子了，平时主要还是上下班通勤，周末或者休假才能有时间出去玩。 所以再次增加预算研究330了（在这插一嘴，小年轻2-30岁先别结婚、就玩，什么时候玩够了再结婚。结婚不能说不幸福，如果你爱她，就要考虑人家的感受，除非你经济超越她一大截。再就是孩子，有了孩子生活中很大一部分开销会花在他身上，还有时间精力等）。这样又攒了1-2年钱预算到了12-14w左右，开始关注超哥、曹小鱼诺诺等。 关键的来了，6月车到家，现在是用车感受：1、动力：动力不用说超越一大截，各位老弟看参数即可；2、空间：虽然日系车都是空间大师，但是330Li毕竟是B级还长轴（不打算要孩子的小年轻此条忽略）；3、静音：超出我想象的好，我也是没开过什么车，我开原来的车不仅是胎噪大，速度到6-70风燥就盖过胎噪了。换这车目前没上高速，但是外环城郊试过了只有胎噪。现在我终于懂为什么很多人说防爆胎胎噪大，因为6-70以内好点路况只有胎噪；4、此条针对3-40岁已婚男性，如果你年少时曾经有个蓝天白云梦，趁着还算有精力不用犹豫，买他。你说为了圆梦儿时的梦想也好，装个B也罢。除了费油没有任何后悔。原来表显7.8个，现在14个，我在市中心上班，虽然是东北18线小城市，平均速度不到20KM/H。 最后预算尽量拉高，最好不要在咸鱼找，别用我们兴趣爱好，去挑战别人的专业知识。车况好价钱低这种事会等着我们吗，别说像超哥曹小鱼等这样专干宝马的大网红，就是普通车商人家也会看啊。我原车卖的车商说开始他们也会关注那些低价引流车源，直至他们同行都被骗，后来他们咸鱼找的车如果是车商会格外小心，不能说咸鱼不好，只能说大家注意。 结语：预祝各位买到自己心目中理想的好车，欢迎大家讨论用车感受。",\n      "images": [
+                                    \n        "https://p3-sign.toutiaoimg.com/motor-article-img/662c66b0c8a4462bb5a5658178c35266~tplv-shrink:1280:720.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=HTuC%2B%2F%2Fc8maoSAYbYACVId04jpg%3D",\n        "https://p3-sign.toutiaoimg.com/motor-article-img/c03fb931d25942c0b5e8eea184442750~tplv-shrink:1280:1707.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=OPD9FLdxL%2FPhUqKkzanvLkc9L9E%3D",\n        "https://p3-sign.toutiaoimg.com/motor-article-img/770b5ce0dad048fab5ba08c4729b32e2~tplv-shrink:854:640.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=VKIy3r%2FqFpB07xLZqAMORsIxBGg%3D",\n        "https://p3-sign.toutiaoimg.com/motor-article-img/c50004bea2ca479e84726d98557dedf8~tplv-shrink:854:640.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=u19UPAZjNtFHcsVXhFutq%2Bzy7EY%3D",\n        "https://p3-sign.toutiaoimg.com/motor-article-img/7b50f8c6401140f697f86d8575b60c78~tplv-shrink:1280:1707.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=LrHZKJrEVSywYJW6UmSBUg%2B0u2o%3D",\n        "https://p3-sign.toutiaoimg.com/motor-article-img/dea85de3e098472a89a927c93ec539cd~tplv-shrink:1279:1706.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=M4UnXN%2Bw5M9PqZMzrYwBgCCsepU%3D",\n        "https://p9-sign.toutiaoimg.com/motor-article-img/153cceb6bc854a68b7b4b00a43204fef~tplv-shrink:1279:1706.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=a3ePryTlj6Nyr3sQcrBDIDa0sJ4%3D",\n        "https://p3-sign.toutiaoimg.com/motor-article-img/fa7f5088743f49b1910111af0368cdab~tplv-shrink:1279:1706.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=cBGX2Zy4jjeGAbXA5%2Bbdj2ZxTFM%3D",\n        "https://p3-sign.toutiaoimg.com/motor-article-img/3e8d1766080e453cb37d5890f0cf149b~tplv-shrink:1280:1707.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=6L%2BHyb8%2BSwBQkJOWe%2BcVnMHKvQY%3D"\n      ]\n    },\n    "allcomments": [
+                                \n      {
+                                    \n        "groupId": "1840941554494467",\n        "commentId": "7549735247370388250",\n        "isOP": false,\n        "author": "芒特2太子",\n        "authorUrl": "https://www.dongchedi.com/user/1377016559443224",\n        "timeRaw": "评论发表于2025-09-14",\n        "content": "同年330i的老咕噜棒子，改了刹车 轮毂 排气 刷了一阶，我本人非常非常喜欢跑山",\n        "images": [
+                                        \n          "https://p3-dcd-sign.byteimg.com/motor-article-img/9eca4eafd2a0411ba41332dac2f8bdb0~tplv-f042mdwyw7-original:640:0.png?rk3s=2e9b8275&x-expires=1770796202&x-signature=Oq%2FsKzsjlANN4MrWEwFAWcLejZo%3D&psm=motor.pc_ugc.api"\n        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1840941554494467",\n        "commentId": "7540881926853821203",\n        "isOP": false,\n        "author": "硕福你补",\n        "authorUrl": "https://www.dongchedi.com/user/106783976567",\n        "timeRaw": "评论发表于2025-08-21",\n        "content": "18款的可以了",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1840941554494467",\n        "commentId": "7602582512585474879",\n        "isOP": false,\n        "author": "麋鹿259c",\n        "authorUrl": "https://www.dongchedi.com/user/60725627072",\n        "timeRaw": "评论发表于21小时前",\n        "content": "好帖 正打算买个15.16的320",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1840941554494467",\n        "commentId": "7590196894207410986",\n        "isOP": false,\n        "author": "Jarvan_wei",\n        "authorUrl": "https://www.dongchedi.com/user/62347632316",\n        "timeRaw": "评论发表于01-01",\n        "content": "多少入的，老铁",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1840941554494467",\n        "commentId": "7561327097726616339",\n        "isOP": false,\n        "author": "用户2506894638352",\n        "authorUrl": "https://www.dongchedi.com/user/123604068468487",\n        "timeRaw": "评论发表于2025-10-15",\n        "content": "很多观点都赞同同东北18线小城市",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1840941554494467",\n        "commentId": "7540814206040720170",\n        "isOP": false,\n        "author": "云起全类目供应链整合",\n        "authorUrl": "https://www.dongchedi.com/user/2233806839877943",\n        "timeRaw": "评论发表于2025-08-21",\n        "content": "恭喜成为宝马车主，同价位找不出操控比他好的，实话",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      },\n      {
+                                    \n        "groupId": "1840941554494467",\n        "commentId": "7550295468677628708",\n        "isOP": false,\n        "author": "聪慧小羊VYH",\n        "authorUrl": "https://www.dongchedi.com/user/708514977954572",\n        "timeRaw": "评论发表于2025-09-15",\n        "content": "老铁，多少钱入的，330曜夜？这车源很少啊",\n        "images": [
+                                        ],\n        "replies": [
+                                        ]\n      }\n    ]\n  }\n]\n```',
+                    'id': 'lc_fe860beb-5e14-4f17-b9de-50fb5487a221'}],
+            name='extract_dcd_by_url',
+            id='4f9523fe-ab4f-4a29-8c32-2b6f4432ea49',
+            tool_call_id='chatcmpl-tool-8d44f485012f4cdd'),
+        AIMessage(
+            content='已成功获取两个帖子的详情信息。\n\n---\n\n### **帖子 1: https://www.dongchedi.com/ugc/article/1853526256983114**\n**作者**: 专职驾驶员簿董  \n**发布时间**: 01-06  \n**发布于**: 宝马3系车友圈  \n\n#### **帖子内容**:\n全新宝马三系内饰与宝马新世代驾趣概念车相似，未来宝马家族车型将保持一致设计风格。新款内饰方向盘设计科幻且具机械感，仪表盘采用“视平线全景显示”技术（超近距投影平视显示），中控屏为不规则造型，旨在方便主驾操作。整体设计值得期待。\n\n#### **配图**:\n1. [
+                内饰图1](
+                https://p3-sign.toutiaoimg.com/motor-article-img/3e770babf06f42e7be93f84d055e70b5~tplv-shrink:1080:720.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=eLKeDlOHd1UWofRvCUR4QX0cYTI%3D)\n2. [
+                内饰图2](
+                https://p3-sign.toutiaoimg.com/motor-article-img/4282d3d8ef05473b9fbb9d8172f0057d~tplv-shrink:1080:720.jpg?_iz=97245&from=post&lk3s=40b00f8d&x-expires=1777939200&x-signature=QN2cJzARIpS4k5TEPtudyHpAgoA%3D)\n\n#### **热门评论摘要**:\n- **“这内饰是哪个奇葩设计的 东倒西歪”**：多位用户批评内饰不对称、屏幕歪斜，视觉上难以接受。\n- **“方向盘是不是装倒了”**：部分用户认为方向盘设计反常，影响驾驶体验。\n- **“油车3系也要这个内饰吗？”**：有',
+            additional_kwargs={
+                'refusal': None},
+            response_metadata={
+                'token_usage': {
+                    'completion_tokens': 512,
+                    'prompt_tokens': 21304,
+                    'total_tokens': 21816,
+                    'completion_tokens_details': None,
+                    'prompt_tokens_details': None},
+                'model_provider': 'openai',
+                'model_name': 'Qwen3-30B-A3B',
+                'system_fingerprint': None,
+                'id': 'chatcmpl-98cd0cfe9f023d56',
+                'finish_reason': 'length',
+                'logprobs': None},
+            id='lc_run--019c27a1-74a2-7ac1-838c-a0146d7ea5bc-0',
+            tool_calls=[
+                ],
+            invalid_tool_calls=[
+                ],
+            usage_metadata={
+                'input_tokens': 21304,
+                'output_tokens': 512,
+                'total_tokens': 21816,
+                'input_token_details': {
+                    },
+                'output_token_details': {
+                    }})]}
