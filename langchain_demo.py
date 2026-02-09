@@ -74,9 +74,9 @@ async def langchain_main(client: MCPClient = MCPClient()):
     checkpointer = InMemorySaver()
     
     model=ChatOpenAI(
-            model_name="Qwen3-30B-A3B",
+            model_name="Qwen3-30B-A3B", #你的模型
             base_url = BASE_URL,
-            api_key = "local-llm",
+            api_key = "local-llm", #你的api key
             temperature=0,
             max_tokens=512,
             timeout=60
@@ -96,15 +96,8 @@ async def langchain_main(client: MCPClient = MCPClient()):
     config = {"configurable": {"thread_id": "1"}}
 
 
-    #question = input("""请输入你想咨询的问题，例如“佛罗里达今天的天气如何？”或“帮我用MCP工具获取抖音视频下载链接：https://www.douyin.com/jingxuan?modal_id=7596027582585128357”：""")
-    insertquestion = "用你所能用的工具获取https://www.dongchedi.com/ugc/article/1853526256983114 和 https://www.dongchedi.com/ugc/article/1840941554494467上的详情"
-    # agent 会创建一个会话
-    # async for event in agent.astream(
-    #     {"messages": question},
-    #     stream_mode='updates',  #"values" 或 "updates"
-    #     config=config,
-    # ):
-    #     print("EVENT:", event)
+    question = input("""请输入你想咨询的问题，例如“佛罗里达今天的天气如何？”或“帮我用MCP工具获取...的详情""")
+    #insertquestion = "用你所能用的工具获取https://www.dongchedi.com/ugc/article/1853526256983114 和 https://www.dongchedi.com/ugc/article/1840941554494467上的详情"
     result = await agent.ainvoke(
         {"messages": [{"role": "user", "content": insertquestion}]},
     config=config,
