@@ -52,6 +52,7 @@
     }
   ]
 }
+```
 ## 🚀 快速开始
 
 ### 0. 环境准备
@@ -63,28 +64,38 @@
 ```bash
 node -v
 npm -v
-
+```
 如未安装，请前往：https://nodejs.org 下载并安装最新 LTS 版本。
 
 ####Python（用于部分数据处理或脚本）
 ```bash
 python --version
-
+```
 本项目使用 pyproject.toml 管理 Python 依赖。
 ### 1. 克隆仓库
+```bash
 git clone https://github.com/your-username/MCP-Tools-for-Automotive-Website-Data-Extraction.git
-cd MCP-Tools-for-Automotive-Website-Data-Extraction
-
+cd MCP-Tools-for-Automotive-Website-Data-Extraction/chrome-devtools-mcp
+```
 ### 2. 安装依赖
 ```bash
 npm install
-
+```
 ### 3. 构建项目
 ```bash
 npm run build
-
-### 4. 运行脚本
+```
+### 4. 安装python依赖
+使用uv安装python程序部分所需依赖
+```bash
+cd ..
+uv sync
+```
+### 5. 运行脚本
+```bash
+uv run langchain.py
 ```
 
 
 
+uv add 
