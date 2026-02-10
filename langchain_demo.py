@@ -14,8 +14,16 @@ try:
     from langgraph.checkpoint.memory import InMemorySaver
 except ImportError:
     print("请安装 langchain, langchain_community, langgraph 等相关模块")
+
 try:
-    from client import MCPClient
+    from langchain_community.chat_models import ChatZhipuAI
+    #from langchain.messages import AIMessage, HumanMessage, SystemMessage   
+except ImportError:
+    print("请安装 langchain_zhipuai 等相关模块")
+except ImportError:
+    print("请安装 langchain_mcp_adapters 等相关模块")
+try:
+    from dcdclient import MCPClient
     import asyncio
     from typing import Any, Dict, List
 except ImportError:
@@ -24,7 +32,9 @@ except ImportError:
 async def langchain_main(client: MCPClient = MCPClient()):
     load_dotenv()
     BASE_URL = os.getenv("BASE_URL")
-
+    model_name = os.getenv("model_name")
+    api_key = os.getenv("api_key")
+    #print(BASE_URL,model_name,api_key,type(api_key),type(model_name),type(BASE_URL))
     SYSTEM_PROMPT = """
     你是一个智能自动化助手，可以调用 MCP 工具来操作浏览器。
 
@@ -74,14 +84,22 @@ async def langchain_main(client: MCPClient = MCPClient()):
 
     checkpointer = InMemorySaver()
     
-    model=ChatOpenAI(
-            model_name=os.getenv("model_name"),
-            base_url = BASE_URL,
-            api_key = os.getenv("api_key"),
-            temperature=0,
-            max_tokens=512,
-            timeout=60
-        )
+    # model=ChatOpenAI(
+    #         model_name=model_name,
+    #         base_url = BASE_URL,
+    #         api_key = api_key,
+    #         temperature=0,
+    #         max_tokens=512,
+    #         timeout=60
+    #     )
+
+    zhipuaiapi_key = os.getenv("ZHIPU_API_KEY")
+    model = ChatZhipuAI(
+        api_key=zhipuaiapi_key,
+        model="glm-4",
+        temperature=0.5
+    )
+
     agent = create_agent(
         model = model,
         system_prompt=SYSTEM_PROMPT,
@@ -93,13 +111,14 @@ async def langchain_main(client: MCPClient = MCPClient()):
 
 
 
-    # `thread_id` is a unique identifier for a given conversation.
-    config = {"configurable": {"thread_id": "1"}}
+    
 
 
-    question = input("""请输入你想咨询的问题，例如“佛罗里达今天的天气如何？”或“帮我用MCP工具获取...的详情""")
+    question = input("""请输入你想咨询的问题，例如“佛罗里达今天的天气如何？”或“帮我用MCP工具获取...的详情 \n""")
     #insertquestion = "用你所能用的工具获取https://www.dongchedi.com/ugc/article/1853526256983114 和 https://www.dongchedi.com/ugc/article/1840941554494467上的详情"
 
+    # `thread_id` is a unique identifier for a given conversation.
+    config = {"configurable": {"thread_id": "1"}}
     result = await agent.ainvoke(
         {"messages": [{"role": "user", "content": question}]},
     config=config,
@@ -137,6 +156,7 @@ async def main():
     client = MCPClient()
     try:
         await client.connect_to_server("./chrome-devtools-mcp/build/src/index.js")
+        #print("Connected to MCP server")
         await langchain_main(client)
         
     except Exception as e:

@@ -126,12 +126,8 @@ class MCPClient:
         """清理资源"""
         await self.exit_stack.aclose()
 async def main():
-    if len(sys.argv) < 2:
-        # print("用法：python client.py <服务器脚本路径>")
-        # sys.exit(1)
-        server_path = "./chrome-devtools-mcp/build/src/index.js"
-    else:
-        server_path = sys.argv[1]
+    server_path = "./chrome-devtools-mcp/build/src/index.js"
+    
 
     client = MCPClient()
     try:
